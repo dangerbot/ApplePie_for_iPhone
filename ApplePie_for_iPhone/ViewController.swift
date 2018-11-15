@@ -40,13 +40,15 @@ class ViewController: UIViewController {
         let letterString = sender.title(for: .normal)!
         let letter = Character(letterString.lowercased())
         print(letter)
+        currentGame.playerGuessed(letter: letter)
+        updateUI()
     }
     
     func newRound() {
         os_log("ViewController. newRound()", log: OSLog.default, type: .info)
         let newWord = listOfWords.removeFirst()
-        currentGame = Game(word: newWord, incorrectMovesRemaining: numOfIncorrectMovesAllowed)
-        print("Word: \(currentGame.word) :: movesRemaining: \(currentGame.incorrectMovesRemaining)")
+        currentGame = Game(word: newWord, incorrectMovesRemaining: numOfIncorrectMovesAllowed, guessedLetters: [])
+        print("Word: \(currentGame.word) :: movesRemaining: \(currentGame.incorrectMovesRemaining) :: guessed Letters: \(currentGame.guessedLetters)")
         updateUI()
     } // END newRound()
     
