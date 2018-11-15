@@ -48,9 +48,10 @@ class ViewController: UIViewController {
     
     func newRound() {
         os_log("ViewController. newRound()", log: OSLog.default, type: .info)
-        let newWord = listOfWords.removeFirst()
+        let newWord = listOfWords.randomElement()! // list of words must not be empty
         currentGame = Game(word: newWord, incorrectMovesRemaining: numOfIncorrectMovesAllowed, guessedLetters: [])
         print("Word: \(currentGame.word) :: movesRemaining: \(currentGame.incorrectMovesRemaining) :: guessed Letters: \(currentGame.guessedLetters)")
+        enableLetterButtons(true) // custom function
         updateUI()
     } // END newRound()
     
@@ -72,6 +73,12 @@ class ViewController: UIViewController {
             updateUI()
         }
     } // END updateGameState()
+    
+    func enableLetterButtons(_ enable: Bool) {
+        for button in letterButtons {
+            button.isEnabled = enable // enable is true
+        }
+    } // END func enableLetterButtons
 
 }
 
