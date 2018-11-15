@@ -9,7 +9,6 @@
 import UIKit
 import os.log
 
-
 class ViewController: UIViewController {
     
     var listOfWords = ["apple","orange","fart"]
@@ -18,15 +17,11 @@ class ViewController: UIViewController {
     
     var totalWins = 0   { didSet {newRound() } }
     var totalLosses = 0 { didSet {newRound() } }
-
     
     @IBOutlet weak var treeImageView: UIImageView!
     @IBOutlet weak var gameWordLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +29,6 @@ class ViewController: UIViewController {
         newRound()
     }
 
-    
     @IBAction func letterButtonPressedAction(_ sender: UIButton) {
         os_log("ViewController. letterButtonPressedAction()", log: OSLog.default, type: .info)
         sender.isEnabled = false
