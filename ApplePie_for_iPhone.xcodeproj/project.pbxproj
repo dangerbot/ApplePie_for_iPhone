@@ -15,6 +15,7 @@
 		7EB93028219CD1BC00ABE00F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB93026219CD1BC00ABE00F /* LaunchScreen.storyboard */; };
 		7EB93033219CD1BD00ABE00F /* ApplePie_for_iPhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB93032219CD1BD00ABE00F /* ApplePie_for_iPhoneTests.swift */; };
 		7EB9303E219CD1BD00ABE00F /* ApplePie_for_iPhoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB9303D219CD1BD00ABE00F /* ApplePie_for_iPhoneUITests.swift */; };
+		7EB9304C219CFC2800ABE00F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB9304B219CFC2800ABE00F /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7EB93039219CD1BD00ABE00F /* ApplePie_for_iPhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePie_for_iPhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB9303D219CD1BD00ABE00F /* ApplePie_for_iPhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePie_for_iPhoneUITests.swift; sourceTree = "<group>"; };
 		7EB9303F219CD1BD00ABE00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EB9304B219CFC2800ABE00F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				7EB93026219CD1BC00ABE00F /* LaunchScreen.storyboard */,
 				7EB93029219CD1BC00ABE00F /* Info.plist */,
 				7EB93021219CD1BB00ABE00F /* ApplePie_for_iPhone.xcdatamodeld */,
+				7EB9304B219CFC2800ABE00F /* Game.swift */,
 			);
 			path = ApplePie_for_iPhone;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				7EB93023219CD1BB00ABE00F /* ApplePie_for_iPhone.xcdatamodeld in Sources */,
 				7EB9301D219CD1BB00ABE00F /* ViewController.swift in Sources */,
 				7EB9301B219CD1BB00ABE00F /* AppDelegate.swift in Sources */,
+				7EB9304C219CFC2800ABE00F /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
