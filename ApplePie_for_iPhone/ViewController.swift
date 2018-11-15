@@ -14,9 +14,11 @@ class ViewController: UIViewController {
     
     var listOfWords = ["apple","orange","fart"]
     let numOfIncorrectMovesAllowed = 7
-    var totalWins = 0
-    var totalLosses = 0
     var currentGame: Game!
+    
+    var totalWins = 0   { didSet {newRound() } }
+    var totalLosses = 0 { didSet {newRound() } }
+
     
     @IBOutlet weak var treeImageView: UIImageView!
     @IBOutlet weak var gameWordLabel: UILabel!
@@ -41,7 +43,7 @@ class ViewController: UIViewController {
         let letter = Character(letterString.lowercased())
         print(letter)
         currentGame.playerGuessed(letter: letter)
-        updateUI()
+        updateGameState()
     }
     
     func newRound() {
@@ -54,10 +56,22 @@ class ViewController: UIViewController {
     
     func updateUI() {
         os_log("ViewController. updateUI()", log: OSLog.default, type: .info)
+        gameWordLabel.text = currentGame.formattedWordforUI
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
         print("Wins: \(totalWins), Losses: \(totalLosses), Image: Tree \(currentGame.incorrectMovesRemaining).pdf")
     } // END updateUI()
+    
+    func updateGameState() {
+        os_log("ViewController. updateGameState()", log: OSLog.default, type: .info)
+        if currentGame.incorrectMovesRemaining <= 0 {
+            totalLosses += 1
+        } else if currentGame.word == currentGame.gameInProgressWord {
+            totalWins += 1
+        } else {
+            updateUI()
+        }
+    } // END updateGameState()
 
 }
 
